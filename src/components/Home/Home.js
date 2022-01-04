@@ -1,26 +1,29 @@
 import React from 'react';
-import SearchIcon from '@material-ui/icons/Search';
-
 import './Home.css';
-
-import HomepageCard from '../HomepageCard/HomepageCard';
-
-import Data from '../../data/data';
-import Ashsvg from '../../images/ash.svg';
+import { MDBContainer, MDBRow, MDBCol, MDBIcon } from "mdbreact";
 
 function Home() {
-    const { homepage_cards: homepageCards } = Data;
-    console.log(homepageCards);
     return (
-        <div class='home'>
-            <div class="Background">
-            <div class='search-container'>
-                <SearchIcon />
-                <form>
-                    <input type='text' name='text' placeholder='Type Here' />
-                </form>
-            </div>
-            </div>
+        <div className="home-bg">
+            <MDBContainer fluid="true" className='center'>
+                <MDBRow>
+                    <MDBCol md="6">
+                        <div className="logo"></div>
+                    </MDBCol>
+                </MDBRow>
+                <MDBRow>
+                    <MDBCol md="6">
+                        <div className="input-group md-form form-sm form-1 pl-3">
+                            <div className="input-group-prepend">
+                                <span className="input-group-text orange" id="basic-text1">
+                                    <MDBIcon className="text-white" icon="search" />
+                                </span>
+                            </div>
+                            <input className="form-control my-0 py-2" type="text" aria-label="Search" />
+                        </div>
+                    </MDBCol>
+                </MDBRow>
+            </MDBContainer>
         </div>
     )
 }
